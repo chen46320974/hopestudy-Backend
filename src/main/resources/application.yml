@@ -1,0 +1,23 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/text?useUnicode=true&autoReconnect=true&useSSL=false&requireSSL=false&failOverReadOnly=false&testOnBorrow=true&serverTimezone=Asia/Shanghai&validationQuery=select 1
+    username: root
+    password: zxy991019
+    driver-class-name: com.mysql.jdbc.Driver
+    connection-init-sql: set names utf8mb4
+
+#mybatis plus配置
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      table-underline: true
+      db-type: mysql
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+  mapper-locations: classpath*:com/example/demo/biz/mapper/xml/*.xml
+
